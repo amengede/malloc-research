@@ -1,0 +1,40 @@
+
+------------------------
+Introduction
+
+Past DSA research was benchmarked with synthetic workloads drawn from
+probability distributions, but this has been found to not be
+indicative of real performance.
+
+The purpose of this paper is to profile some real C/C++ programs,
+counting the number of instruction cycles.
+
+The paper concludes that conservative garbage collection can be
+competitive with other manual DSA algorithms. BW 2.6+ is used in this 
+study.
+
+------------------------
+Results
+
+In the results, the conservative garbage collection is difficult to
+measure as its memory freeing is deferred (a call to free will return 
+fairly quickly, but the actual work is done at some later point).
+
+To mitigate this hiding of overhead, total execution time was also
+measured. In terms of absolute execution time, BW 2.6+ is the slowest,
+but only by a factor of 1.21 relative to the fastest. ie. within the
+same ballpark as manual DSA.
+
+BW 2.6+ does, however, use significantly more heap memory and causes 
+higher fragmentation.
+
+------------------------
+Conclusion
+
+I agree that it's important to profile allocators on real workloads.
+It's interesting to see that garbage collection isn't an order of
+magnitude worse than manual management, however the unpredictability of
+time cost may rule out garbage collection for a game project, and
+certainly would increase the scope of this investigation unreasonably.
+
+------------------------

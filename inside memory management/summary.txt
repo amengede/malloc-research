@@ -1,0 +1,8 @@
+Discusses some of the history of memory management, building up a case
+for allocators.
+
+Briefly discusses the issue of virtual memory.
+
+Gives a good mini tutorial on implementing malloc
+from scratch, but otherwise doesn't give much algorithmic insight
+beyond other sources.

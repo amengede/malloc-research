@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{10.1002/spe.4380240602}
+David Detlefs, Al~Dosser, and Benjamin Zorn.
+\newblock Memory allocation costs in large c and c++ programs.
+\newblock {\em Softw. Pract. Exper.}, 24(6):527–542, jun 1994.
+
+\bibitem{10.1145/155090.155107}
+Dirk Grunwald, Benjamin Zorn, and Robert Henderson.
+\newblock Improving the cache locality of memory allocation.
+\newblock In {\em Proceedings of the ACM SIGPLAN 1993 Conference on Programming
+  Language Design and Implementation}, PLDI '93, page 177–186, New York, NY,
+  USA, 1993. Association for Computing Machinery.
+
+\bibitem{10.5555/2025255}
+Richard Jones, Antony Hosking, and Eliot Moss.
+\newblock {\em The Garbage Collection Handbook: The Art of Automatic Memory
+  Management}.
+\newblock Chapman \& Hall/CRC, 1st edition, 2011.
+
+\bibitem{inproceedings}
+M.~Masmano, I.~Ripoll, Alfons Crespo, and Jorge Real.
+\newblock Tlsf: A new dynamic memory allocator for real-time systems.
+\newblock volume~16, pages 79-- 88, 01 2004.
+
+\bibitem{matani2021fastbitmapfitcpu}
+Dhruv Matani and Gaurav Menghani.
+\newblock Fast bitmap fit: A cpu cache line friendly memory allocator for
+  single object allocations, 2021.
+
+\bibitem{528746}
+T.~Ogasawara.
+\newblock An algorithm with constant execution time for dynamic storage
+  allocation.
+\newblock In {\em Proceedings Second International Workshop on Real-Time
+  Computing Systems and Applications}, pages 21--25, 1995.
+
+\bibitem{10.1145/3828.3835}
+Daniel~Dominic Sleator and Robert~Endre Tarjan.
+\newblock Self-adjusting binary search trees.
+\newblock {\em J. ACM}, 32(3):652–686, jul 1985.
+
+\bibitem{10.1145/773379.806613}
+C.~J. Stephenson.
+\newblock New methods for dynamic storage allocation (fast fits).
+\newblock {\em SIGOPS Oper. Syst. Rev.}, 17(5):30–32, oct 1983.
+
+\end{thebibliography}

@@ -1,0 +1,15 @@
+A note on older IBM systems. In these systems memory allocation could
+be implicit (side effect of OS operation) or explicit (requested by
+user). Similarly memory frees can be implicit or explicit.
+
+Explicit allocations can have fixed or variable size and are
+conditional or unconditional.
+variable size: specify minimum acceptible and larger preferred amount
+conditional: program can proceed as normal if request cannot be met
+unconditional: program cannot proceed without success
+
+Although this is not very relevant to my research, and I can't
+immediately think of use cases for these other flags, it's an example
+of some of the richness which has been lost as the process was refined.
+As a matter of fact, malloc and free within the user space can be used
+to implement these flags.

@@ -1,0 +1,66 @@
+https://developer.ibm.com/tutorials/l-memory/
+
+----------------------------
+
+Why memory must be managed
+
+In old computers (Apple II assembly language) the user had the run of
+the full system, and all models of the same type had the same amount of 
+memory available.
+
+This became problematic when parts of the program required their own
+amounts of memory. It necessitated some sort of supervising library
+to coordinate resource requests.
+
+----------------------------
+
+C-style memory allocators
+
+basically malloc and free, any c-style allocator must make these 
+available.
+
+----------------------------
+
+Physical and virtual memory
+
+Now memory is managed by the operating system, this is a whole
+additional level of complexity more than program-level management.
+Multiple programs are running at the same time and in total they may
+be using more memory than the system has. Virtual memory is a system 
+where the hard drive stores inactive regions of memory which are then
+"swapped in" on the fly.
+
+Then discusses some system calls which can be used to map memory (memory is mapped when its virtual address has a corresponding physical 
+address)
+
+----------------------------
+
+Implementing a simple allocator
+
+shows an example of reimplementing malloc and free with sbreak
+
+----------------------------
+
+Other malloc implementations
+
+Lists some issues to consider: allocation speed, free speed, threaded 
+behaviour, behaviour when memory is close to filling, cache locality,
+bookeeping memory overhead, bevaviour in virtual memory environments,
+effect of object size and realtime guarantees.
+
+Also mentions a few popular implementations: Doug Lea Malloc,
+BSD Malloc and Hoard.
+
+----------------------------
+
+Shortcomings of malloc()-based memory management
+
+Basically, detecting memory leaks. Especially in long lived systems.
+
+----------------------------
+
+Semi-automatic strategies
+
+Reference counting, Memory pools, Garbage collection (fully automatic)
+
+----------------------------

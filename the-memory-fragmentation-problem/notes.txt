@@ -1,0 +1,74 @@
+---------------------------------
+Abstract
+
+Study concludes that under real workloads, memory fragmentation is
+actually near zero. The existing algorithms are good, and
+implementation efficiency is the limiting factor.
+---------------------------------
+Introduction
+
+Historically, reducing fragmentation has been a concern in DSA design.
+
+However, the perceived fragmentation of old allocators is innacurate.
+
+All research has accepted the premise that a randomly generated
+trace will predict the perfomance of a real trace.
+
+The paper argues that in design, allocator policy is independent to
+allocator implementation.
+---------------------------------
+Description of Algorithms
+
+Paper studies: first fit, next fit, best fit, segregated free lists,
+simple segregated storage, segregated fit algorithms, binary buddy,
+and double buddy.
+
+The paper notes that each of these algorithms has multiple possible
+implementations.
+---------------------------------
+The Test Programs
+
+Programs were chosen which weren't all doing the same thing,
+didn't leak memory excessively, and included a good amount of 
+mallocs and frees.
+---------------------------------
+Experimental Design
+
+The goal of the experiment was to measure fragmentation of allocator
+policy, independent of implementation.
+
+A trace was generated for each run, a trace is a journal tracking
+the type of operation, the memory location and the number of bytes.
+
+Then basic statistics were gathered: the number of objects allocated,
+number of bytes allocated, average object size, maximum live bytes
+at any time and maximum live objects at any time.
+
+Finally the journal was replayed. By measuring the number of
+bytes requested by custom allocators vs the journal, the fragmentation
+could be estimated.
+---------------------------------
+Results
+
+Best fit and next fit policies seemed to perform the best in general.
+
+In general the best policies immediately coalesce memory and prefer
+to reallocate recently freed memory.
+
+The paper also observed that objects allocated at the same time tend
+to be freed at the same time, and programs tent to allocate only
+a few sizes.
+---------------------------------
+Conclusions
+
+Policies themselves show almost no fragmentation, so the fragmentation
+problem seems to come down to a question of implementation.
+Issues such as memory overheads may dominate the problem more.
+---------------------------------
+
+Summary:
+
+Very interesting, especially the idea of "strategy", overarching
+principles for memory allocators.
+Also describes a malloc test process similar to what I'll be
+implementing.

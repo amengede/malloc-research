@@ -1,0 +1,147 @@
+Summaries
+--------------------
+Abstract: 
+Dynamic Storage Allocation (DSA) is difficult to measure
+as it can be unbounded in the worse case.
+
+Nevertheless, DSA is important as realtime systems are flexible and
+require it.
+
+Two Level Segregated Fit allocator (TLSF), presented in this paper
+allocates and deallocates with a temporal cost theta(1)
+--------------------
+Introduction:
+DSA is one of the most studied and analysed problems, however DSA for
+realtime applications is still difficult.
+
+Realtime systems need to know the time cost in order to schedule,
+existing algorithms are often unbounded or very slow in the worst case.
+
+Fragmentation is also an issue to consider in systems which run for long
+periods of time.
+
+Predicability of cost is the primary issue, though of course other
+factors are important.
+
+A common solution is to grab a slab upfront and manage it internally.
+
+TLSF has bounded worst case time, and small and bounded fragmentation.
+--------------------
+Real-Time Requirements for DSA
+A realtime system must determine at compile time whether it will be 
+able to satisfy time constraints at runtime, hence 
+Worst Case Execution Time (WCET) is important.
+
+Memory fragmentation is more critical due to long runtimes.
+
+In short, the requirements are: bounded and fast response time, 
+and memory requests must always be satisfied.
+
+The paper considers small embedded systems with explicity memory
+management (no garbage allocation).
+--------------------
+Fragmentation
+Fragmentation can cause the system to fail to allocate even though the
+sum of all free memory may be ok.
+
+Studies with real workloads have indicated that well designed allocators
+limit fragmentation. Best-fit or first-fit produce low fragmentation,
+blocks of memory should be immediately coalesced on release, and
+recently freed memory should be preferred for next use.
+--------------------
+DSA Algorithms
+Sequential Fit: free memory blocks on a linked list. Linearly scan.
+
+Segregated Free Lists: Array of lists of free blocks, every list has a 
+certain size class.
+
+Buddy Systems: variant of segregated free lists, with efficient
+split and merge opertations.
+
+Indexed Fit: uses advanced data structures (types of trees) to manage
+free blocks.
+
+Bitmap Fit: metadata is stored to the side as a bitfield. 
+Good cache hit rate.
+--------------------
+DSA Operational Model
+A DSA must let the user allocate and free memory. Under the hood it has
+a set of blocks that it manages.
+
+A DSA generally will be able to:
+    Insert a free block
+    Search for a free block of a given size or higher
+    Search for a block adjacent to another
+    Remove a free block
+--------------------
+Design Criteria of TLSF
+
+Immediate coalescing. Deferred coalescing may be useful when a system
+often uses blocks of the same size. However, this reduces predictability
+and increases fragmentation.
+
+Splitting threshold. By limiting the smallest allocation size, metadata
+can be stored inside the blocks.
+
+Good-fit strategy. TLSF attempts best fit in order to reduce 
+fragmentation.
+
+No Reallocation. All the memory is owned upfront, no more is allocated.
+
+Same strategy for all block sizes, in order to improve predictability.
+
+Memory is not cleaned up. Memory is not zeroed-out upon allocation,
+reduces overhead.
+--------------------
+TLSF Data Structures
+Level 1 Array: pointers representing power of two size classes 
+(16, 32, ...)
+
+Level 2 Array: Subdivides each size class linearly.
+
+Arrays at each level have a bitmask indicating which lists are empty 
+and which ones have free blocks.
+
+Blocks use the boundary tag method by Knuth.
+
+Blocks are linked in two structures: by size class, or by neighbours
+(metadata in footer.)
+--------------------
+TLSF Block Header
+Free block: {size[T|F], prev_physical_block, next_free, previous_free}
+Used block: {size[T|F], prev_physical_block}
+Here T|F is two bit holding status:
+    T: Tail, this is the last block
+    F: Free
+--------------------
+TLSF Structure Functions
+Explains the formula for calculating the first and second level
+indices of a block size. This can be implemented as bit level 
+operations.
+
+Also explains the methods of a TLSF allocator.
+--------------------
+TLSF Structure Parameters
+
+First Level Index: number of first level size classes
+
+Second Level Index: how many subclasses to divide each first level into.
+Has to be a power of two, in the range [1,32]
+
+Minimum block size: pretty much what it sounds like, 16 bytes is the 
+default.
+--------------------
+TLSF Structure Optimisations
+
+1D arrays chosen over 2D arrays for cache locality.
+
+TLSF structure created dynamically at the start of the memory pool, to
+keep TLSF and memory on the same memory page.
+--------------------
+Conclusion:
+The problem with something like a binary buddy system is it may be fast,
+but fragmentation can be up to 50%.
+Conversely, fitting methods like first or best fit reduce fragmentation,
+at the cost of unpredictable search time.
+TLSF strikes a balance between these.
+--------------------

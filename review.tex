@@ -1,0 +1,161 @@
+\documentclass{report}
+% General document formatting
+\usepackage[margin=0.7in]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\chapter{Literature Review}
+
+\section[TLSF]{TLSF: a new dynamic memory allocator for real-time systems \cite{inproceedings}}
+
+\subsection{Summary}
+Proposes a new data structure, the Two Level segregated Free List. In Realtime Systems, scheduling algorithms require that performance be predictable and bounded. Traditional Segmented Free Lists can either cover a wide range of size classes or be very granular to reduce fragmentation. TLSF can do both and has constant access time.
+
+\subsection{Advantages}
+\begin{itemize}
+	\item{Constant worst case execution time}
+	\item{Low fragmentation}
+	\item{Bit-level manipulation to find size class index}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Two level list structure means potentially higher overhead}
+	\item{Metadata stored directly in allocated memory (Knuth's boundary tag method)means lower cache locality}
+\end{itemize}
+
+\section[Allocation Costs]{Memory allocation costs in large C and C++ programs \cite{10.1002/spe.4380240602}}
+\subsection{Summary}
+Profiles various memory allocators for a variety of real malloc-heavy applications, by counting the number of instructions used for allocation and free operations.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Evaluates allocators on the basis of real rather than synthetic traces}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Only instruction counts are being measured, this may be a heuristic for allocation speed but is not a measurement of eg. the speed of that allocated memory}
+\end{itemize}
+
+\section[GC Handbook]{The Garbage Collection Handbook: The Art of Automatic Memory Management \cite{10.5555/2025255}}
+\subsection{Summary}
+Has a very comprehensive chapter on memory allocation, explains a wide variety of standard allocators and the principles behind them.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Good range of allocators presented.}
+	\item{Most research papers seem to more or less summarise the contents of this chapter}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Good starting point, but doesn't really dig into implementation details for advanced data structures.}
+	\item{No concrete data, no comparison amongst allocators.}
+\end{itemize}
+
+\section[IBM Tutorial]{Inside Memory Management}
+\subsection{Summary}
+Gives a simple example of how one might completely reimplement malloc using Linux Operating System calls (sbrk). Interesting but a little too in the weeds for this project.
+
+\section[Knuth]{Fundamental Algorithms}
+\subsection{Summary}
+Similar to Garbage Collection Handbook, this is a highly influential volume. A little dated, but all modern allocators (specifically free list and buddy) have their roots in these algorithms.
+
+\section[Fragmentation]{The Memory Fragmentation Problem: Solved? \cite{10.1145/286860.286864}}
+\subsection{Summary}
+Fragmentation (both internal and external) can have an effect on system performance. Both by wasting space and by scattering useful data. Previously, fragmentation was measured by synthetic trace analysis. In some cases great efforts were taken to ensure traces had statistically significant properties. This paper re-examines the implicit assumption: that synthetic trace analysis is an indicator of fragmentation in real programs, and finds this not to be true.\\
+\\
+The paper also attempts to evaluate allocator policies independent of implementation and concludes that most fragmentation problems are actually poor implementations. The paper also examines which common features are shared by low fragmentation algorithms, and finds that immediate coalescing on free and reuse of most frequently freed blocks gives best performance.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Analyses real program traces}
+	\item{Gives general recommendations, independent of implementation}
+	\item{Documents experimental design clearly}
+	\item{Mentions some standard programs on which allocators can be benchmarked.}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Dated (but reproducible)}
+	\item{Given that real fragmentation is actually lower than expected, are "power of two" systems as bad as the Garbage Collection Handbook makes out? This would have been an interesting point to investigate.}
+\end{itemize}
+
+\section[Constant Allocator]{An algorithm with constant execution time for dynamic storage allocation. \cite{528746}}
+\subsection{Summary}
+Proposes a one level variant of TLSF (this paper was published before TLSF was proposed), based around "power of two" size classes. Each size class holds blocks in the size range $\left[2^i, 2^{i + 1}\right)$, making them flexible but still enforcing the condition that every block on the list must be able to fulfill a request. This means that memory requests do not require searching a free list.
+\subsection{Advantages}
+\begin{itemize}
+	\item{One lookup table may be quicker than TLSF}
+	\item{Allocation and free time is constant}
+	\item{Memory immediately coalexced on release}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Power of two size class means potentially more internal fragmentation, yet to be determined if this matters in practice}
+\end{itemize}
+
+\section[Fast Bitmap Fit]{Fast Bitmap Fit: A CPU Cache Line friendly memory allocator for single object allocations \cite{matani2021fastbitmapfitcpu}}
+\subsection{Summary}
+Proposes encoding a small binary search tree directly into the bits of an integer. The proposed allocator can quickly search, allocate and free as the whole structure is cache-local. The allocator can also take a "hint" to attempt adjacent allocations.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Search structure is independent of underlying data, no scattering}
+	\item{Search, allocation and freeing is fast, can all be done with bit-level instructions}
+	\item{Search can take a hint}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Less flexible, only a certain number of objects can be managed, objects all fixed size.}
+\end{itemize}
+
+\section[Cache Locality]{Improving the cache locality of memory allocation \cite{10.1145/155090.155107}}
+\subsection{Summary}
+Previous research by Zorn just profiled allocators on the basis of instruction counts, but this neglects the possibility that an allocator may take more time to allocate, but allocate memory which is faster to use. This paper investigates the relationship between underlying allocator and execution time for a number of real programs. This sort of research into cache hit rates had only previously been undertaken for Garbage Collected languages, where its effect was obvious. The paper concludes that implementation rate effects both cache hit rate and total execution time for a number of allocation-heavy programs, while noting that there isn't a single implementation which is universally best for every program.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Uses real program traces rather than synthetic}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Strange process for simulating the cache. Although it introduces statistical variance, raw execution time might have been more realistic, especially since the benefit of cache hit rate is improved execution time.}
+\end{itemize}
+
+\section[Fast Fits]{New methods for dynamic storage allocation (Fast Fits) \cite{10.1145/773379.806613}}
+\subsection{Summary}
+Compares Free Lists with Buddy Allocators and proposes a new data structure which performs somewhere between the two. Fast Fits are based around a novel data structure called a Cartesian tree. A cartesian tree is a two dimensional generalisation of a search tree where addresses are ascending from left to right and sizes are descending from top to bottom.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Significantly fewer nodes are searched in comparison to free lists}
+	\item{As the root is the largest free size, requests which are too large to fulfill can be immediately rejected}
+	\item{Paper seems speculative, might be interesting to investigate}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{In some cases the tree can be highly unbalanced and essentially linear}
+	\item{The constraints of the cartesian tree mean that the search tree can't be rebalanced}
+	\item{Appears to strawman list search. In best fit an entire list must be searched, but other allocators exist which don't do this, and they haven't been mentioned.}
+	\item{Not the best cache locality in the search structure.}
+\end{itemize}
+
+\section[Splay Trees]{Self-adjusting binary search trees \cite{10.1145/3828.3835}}
+\subsection{Summary}
+Introduces Splay Trees. A splay tree is a binary search tree where the most recent search result is "splayed" or rotated to the root. This gives the standard binary search tree performance for searching, with the added benefit that frequently accessed nodes will be quicker to retrieve.
+\subsection{Advantages}
+\begin{itemize}
+	\item{Potentially fulfills both of the criteria for low fragmentation: immediate coalesce on free and reuse of most recently freed blocks}
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\item{Good average behaviour, but worst behaviour is linear}
+	\item{Not the best cache locality in the search structure.}
+\end{itemize}
+
+\bibliography{bibbed}{}
+\bibliographystyle{plain}
+
+\end{document}

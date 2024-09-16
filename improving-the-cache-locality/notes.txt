@@ -1,0 +1,57 @@
+--------------------------
+Abstract
+
+Evaluates the performance of allocators on a range of C++ programs
+in order to strike a balance between fast allocation and reference
+locality.
+--------------------------
+Introduction
+
+Many programmers simply use the default allocator, believing it to be
+good enough.
+
+This paper shows that allocator implementation can effect cache hit
+rate, increasing execution time by up to 25%
+
+Previous work by the authors has measured machine instruction counts,
+but this does not say anything of cache performance.
+
+Cache performance is difficult to measure. For instance, a poor
+allocator may be hard to pinpoint because it causes generally low
+performance everywhere.
+--------------------------
+Previous Work
+
+Describes the allocators to be tested. All are real allocators in
+production use.
+
+Previous research on reference locality has been undertaken, but
+mostly in Garbage Collection.
+--------------------------
+Experimental Design
+
+Describes the programs used and measurement tools.
+
+Experiment replays a journal, and then uses the TYCHO cache simulator
+to simulate cache behaviour. (would it have been better to
+just measure real performance? Maybe, though this would introduce
+statistical variance.)
+--------------------------
+Conclusions
+
+Implementation affects execution time, but not universally.
+Ie, there is no silver bullet.
+
+Searching a freelist is bad for page reference and cache locality,
+free blocks should somehow be close to one another.
+--------------------------
+Summary
+
+This paper shows that implementation affects execution time. It
+suggests that searching a free list is bad for cache coherency,
+but otherwise there doesn't seem to be a single solution.
+
+This raises the question of: which allocators might be better
+in which cases? Is there a way to know ahead of time, and maybe
+mix them within a program?
+--------------------------

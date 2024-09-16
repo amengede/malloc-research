@@ -1,0 +1,48 @@
+--------------------
+Introduction
+
+This paper introduces a method, Fast-fit, which has roughly
+the same storage requirements as a standard linked-list method,
+but uses a different data structure and has a time performance
+somewhere between first fit and buddy.
+--------------------
+The data structure
+
+Available blocks are chained by a 2D tree where:
+left->right: address order (ascending)
+top->bottom: memory size (decreasing)
+
+This sort of tree is called a "cartesian tree".
+
+Provided it's not unbalanced, this tree has O(log n) performance,
+though it's worth noting that the 2D resriction of the tree means
+it cannot be rebalanced.
+--------------------
+Allocation Policies
+
+It's possible to request more storage than is available, fast fit
+detects this, as the largest free block is always the root.
+
+Leftmost fit: select the leftmost node of sufficent length. Can make
+tree unbalanced.
+
+Better fit: Descend from root, at each level choose the better fitting
+descendent.
+--------------------
+Performance Studies
+
+In synthetic trace analysis, fast fit outperforms first fit and
+best fit.
+
+Buddy method performed well in terms of instruction count,
+but used more space.
+--------------------
+Summary
+
+Paper lacks detail, but it's an interesting idea. Paper seems to
+compare to first fit in which the structure is fully scanned each
+time, so maybe a segmented free list would perform better?
+
+Still, the lack of solid data makes this an interesting method
+to investigate.
+--------------------

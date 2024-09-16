@@ -1,0 +1,51 @@
+--------------------------
+Abstract
+
+Although some allocation algorithms may be fast, the way they
+allocate may cause memory which is slow to use.
+--------------------------
+Introduction
+
+Randomly ordered allocation and deallocation can cause addresses to
+be scattered in memory.
+
+Software lookaside buffers has been investigated as a possible
+solution, but it's complicated.
+
+Fast Bitmap Fit is an elegant solution.
+--------------------------
+Previous Work
+
+
+--------------------------
+Fast Bitmap Fit
+
+Metadata is stored in the bits of a bitmap representing a 
+full binary tree.
+
+Leaf nodes refer to actual memory blocks.
+
+Internal nodes indicate whether their children are free.
+
+Upon allocation, first step down to a leaf, preferring left children
+Then mark that leaf as used (1), and step back to the parent node,
+setting parent = left_child & right_child each time
+
+Upon free, set the freed bit to 0, then step back, setting each
+parent to 0 and stopping if the parent is already 0.
+
+The allocator can also attempt to allocate with a hint, it'll search
+towards the direction of the hint location.
+--------------------------
+Conclusion
+
+Accesses and frees in logarithmic time. Attempts to automatically
+keep everything close in memory.
+--------------------------
+Summary
+
+Probably good for small object/fixed size allocators, but my
+concern is the lack of flexibility.
+This might be a good addition to another data structure.
+For instance: as the lower level on TLSF.
+--------------------------

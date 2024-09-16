@@ -1,0 +1,39 @@
+--------------------------
+Abstract
+
+Introduces a new algorithm, Half-Fit, which boasts predictable
+worst case execution time.
+--------------------------
+Introduction
+
+WCET is important to know for scheduling algorithms.
+
+Both theoretical and practical worst time is important.
+
+Although buddy systems are predictable theoretically, in practice they
+are susceptible to cache and TLB misses.
+--------------------------
+Conventional DSA Algorithms
+
+Describes existing DSA algorithms. Pretty standard summary.
+--------------------------
+Half-Fit
+
+Half fit maintains "loose" size classes. All blocks on a free list
+are guaranteed to be at least a given size, so no searching is needed.
+
+size classes are [2^i, 2^(i + 1)). Memory is coalesced immediately
+on free.
+--------------------------
+Experimental Simulation Results
+--------------------------
+Conclusions
+--------------------------
+Summary
+
+Clearly the tradeoff here is that this method could have potentially
+high fragmentation. Given that real life cases have lower fragmentation
+than expected, I would be curious to know if this coarser approach
+is faster than TLSF. Might be more cache friendly with only one
+buffer lookup?
+--------------------------

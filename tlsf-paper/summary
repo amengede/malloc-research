@@ -1,0 +1,19 @@
+The primary challenge in DSA for realtime systems is to predict at 
+compile time how long an allocation will take at runtime. One approach
+is segmented free lists, where free blocks of memory are organized
+roughly into "size classes". Covering a range of size classes while
+still providing granularity can be a challenge, with low granularity
+leading to fragmentation and high granularity leading to long search
+times. 
+
+TLSF addresses this issue and boasts bounded and acceptible worst
+case performance. TLSF achieves this with a two level free-list,
+the top level is organized by logarithmic size classes, and indexes
+into a second level with linear size classes. Additionally, bitmasks
+are used at each level to indicate which blocks are available for use.
+
+The operations to index into each level can be performed on a bit-level
+in constant time. This yields a predicatable time cost.
+
+One area for investigation is cache coherency. As with any method,
+stress testing would also not hurt.
