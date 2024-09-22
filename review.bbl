@@ -1,22 +1,37 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{ibmDeveloper}
+Jonathan Bartlett.
+\newblock Ibm developer --- developer.ibm.com.
+\newblock \url{https://developer.ibm.com/tutorials/l-memory/}, 2004.
+\newblock [Accessed 10-09-2024].
 
 \bibitem{10.1002/spe.4380240602}
 David Detlefs, Al~Dosser, and Benjamin Zorn.
 \newblock Memory allocation costs in large c and c++ programs.
 \newblock {\em Softw. Pract. Exper.}, 24(6):527–542, jun 1994.
 
-\bibitem{10.1145/155090.155107}
+\bibitem{10.1145/173262.155107}
 Dirk Grunwald, Benjamin Zorn, and Robert Henderson.
 \newblock Improving the cache locality of memory allocation.
-\newblock In {\em Proceedings of the ACM SIGPLAN 1993 Conference on Programming
-  Language Design and Implementation}, PLDI '93, page 177–186, New York, NY,
-  USA, 1993. Association for Computing Machinery.
+\newblock {\em SIGPLAN Not.}, 28(6):177–186, jun 1993.
+
+\bibitem{10.1145/301589.286864}
+Mark~S. Johnstone and Paul~R. Wilson.
+\newblock The memory fragmentation problem: solved?
+\newblock {\em SIGPLAN Not.}, 34(3):26–36, oct 1998.
 
 \bibitem{10.5555/2025255}
 Richard Jones, Antony Hosking, and Eliot Moss.
 \newblock {\em The Garbage Collection Handbook: The Art of Automatic Memory
   Management}.
 \newblock Chapman \& Hall/CRC, 1st edition, 2011.
+
+\bibitem{knuth97}
+Donald~E. Knuth.
+\newblock {\em The Art of Computer Programming, Vol. 1: Fundamental
+  Algorithms}.
+\newblock Addison-Wesley, Reading, Mass., third edition, 1997.
 
 \bibitem{inproceedings}
 M.~Masmano, I.~Ripoll, Alfons Crespo, and Jorge Real.
@@ -40,9 +55,11 @@ Daniel~Dominic Sleator and Robert~Endre Tarjan.
 \newblock Self-adjusting binary search trees.
 \newblock {\em J. ACM}, 32(3):652–686, jul 1985.
 
-\bibitem{10.1145/773379.806613}
+\bibitem{10.1145/800217.806613}
 C.~J. Stephenson.
 \newblock New methods for dynamic storage allocation (fast fits).
-\newblock {\em SIGOPS Oper. Syst. Rev.}, 17(5):30–32, oct 1983.
+\newblock In {\em Proceedings of the Ninth ACM Symposium on Operating Systems
+  Principles}, SOSP '83, page 30–32, New York, NY, USA, 1983. Association for
+  Computing Machinery.
 
 \end{thebibliography}

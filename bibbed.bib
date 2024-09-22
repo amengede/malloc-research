@@ -100,23 +100,6 @@ pages = {177–186},
 numpages = {10}
 }
 
-@inproceedings{10.1145/155090.155107,
-author = {Grunwald, Dirk and Zorn, Benjamin and Henderson, Robert},
-title = {Improving the cache locality of memory allocation},
-year = {1993},
-isbn = {0897915984},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/155090.155107},
-doi = {10.1145/155090.155107},
-abstract = {The allocation and disposal of memory is a ubiquitous operation in most programs. Rarely do programmers concern themselves with details of memory allocators; most assume that memory allocators provided by the system perform well. This paper presents a performance evaluation of the reference locality of dynamic storage allocation algorithms based on trace-driven simualtion of five large allocation-intensive C programs. In this paper, we show how the design of a memory allocator can significantly affect the reference locality for various applications. Our measurements show that poor locality in sequential-fit allocation algorithms reduces program performance, both by increasing paging and cache miss rates. While increased paging can be debilitating on any architecture, cache misses rates are also important for modern computer architectures. We show that algorithms attempting to be space-efficient by coalescing adjacent free objects show poor reference locality, possibly negating the benefits of space efficiency. At the other extreme, algorithms can expend considerable effort to increase reference locality yet gain little in total execution performance. Our measurements suggest an allocator design that is both very fast and has good locality of reference.},
-booktitle = {Proceedings of the ACM SIGPLAN 1993 Conference on Programming Language Design and Implementation},
-pages = {177–186},
-numpages = {10},
-location = {Albuquerque, New Mexico, USA},
-series = {PLDI '93}
-}
-
 @inproceedings{10.1145/800217.806613,
 author = {Stephenson, C. J.},
 title = {New methods for dynamic storage allocation (Fast Fits)},
@@ -132,25 +115,6 @@ pages = {30–32},
 numpages = {3},
 location = {Bretton Woods, New Hampshire, USA},
 series = {SOSP '83}
-}
-
-@article{10.1145/773379.806613,
-author = {Stephenson, C. J.},
-title = {New methods for dynamic storage allocation (Fast Fits)},
-year = {1983},
-issue_date = {October 1983},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-volume = {17},
-number = {5},
-issn = {0163-5980},
-url = {https://doi.org/10.1145/773379.806613},
-doi = {10.1145/773379.806613},
-abstract = {The classical methods for implementing dynamic storage allocation can be summarized thus First Fit and Best Fit The available blocks of storage are linked together in address order. Storage is allocated from the first available block of sufficient length, or from a block with the minimum excess length. Storage can be allocated or released in multiples of two words. In the long run, if numerous pieces of storage of more-or-less random lengths are allocated and released at more-or-less random intervals, the storage becomes fragmented, and a number of uselessly small blocks develop, particularly near the beginning of the list. Although these fragments usually comprise a small proportion of the storage (typically around 10 per cent), a lot of time can be wasted chaining through them. Buddy Methods Here the task of managing the storage is reduced in size by constraining the way in which the storage can be divided up, e.g. into blocks with lengths which are powers of 2. This eliminates chaining through long lists of uselessly small blocks; on the other hand, space is wasted in rounding up the length requested to an allowable size, and typically about 40 per cent more storage is required to satisfy the same allocations than when using First Fit or Best Fit.The methods presented in this paper are externally compatible with First Fit and Best Fit, and require roughly the same amount of storage for a given sequence of allocations. They use, however, a completely different internal data structure, one effect of which is to reduce the number of blocks that have to be visited to perform a typical allocation or release operation. These new methods exhibit roughly the same space performance as First Fit, and a time performance which falls between those of First Fit and Buddy.},
-journal = {SIGOPS Oper. Syst. Rev.},
-month = {oct},
-pages = {30–32},
-numpages = {3}
 }
 
 @article{10.1145/358841.358852,
@@ -190,4 +154,29 @@ journal = {J. ACM},
 month = {jul},
 pages = {652–686},
 numpages = {35}
+}
+
+@book{knuth97,
+  added-at = {2015-06-04T07:09:07.000+0200},
+  address = {Reading, Mass.},
+  author = {Knuth, Donald E.},
+  biburl = {https://www.bibsonomy.org/bibtex/296a2ce8070028e53a72f4b1d64d467a5/ytyoun},
+  edition = {Third},
+  interhash = {bb4a4a475ed6fc749f4863d5fa9bb651},
+  intrahash = {96a2ce8070028e53a72f4b1d64d467a5},
+  isbn = {0201896834 9780201896831},
+  keywords = {algorithm knuth no.pdf taocp textbook},
+  publisher = {Addison-Wesley},
+  refid = {872287313},
+  timestamp = {2015-07-29T09:31:31.000+0200},
+  title = {The Art of Computer Programming, Vol. 1: Fundamental Algorithms},
+  year = 1997
+}
+
+@misc{ibmDeveloper,
+	author = {Bartlett, Jonathan},
+	title = {IBM Developer --- developer.ibm.com},
+	howpublished = {\url{https://developer.ibm.com/tutorials/l-memory/}},
+	year = {2004},
+	note = {[Accessed 10-09-2024]},
 }
