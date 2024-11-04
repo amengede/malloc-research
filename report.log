@@ -1,0 +1,683 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.2)  4 NOV 2024 12:29
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**report.tex
+(./report.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count196
+\Gm@cntv=\count197
+\c@Gm@tempcnt=\count198
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks18
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count199
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen151
+\captionmargin=\dimen152
+\caption@leftmargin=\dimen153
+\caption@rightmargin=\dimen154
+\caption@width=\dimen155
+\caption@indent=\dimen156
+\caption@parindent=\dimen157
+\caption@hangindent=\dimen158
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count266
+\c@continuedfloat=\count267
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count268
+\lst@gtempboxa=\box51
+\lst@token=\toks21
+\lst@length=\count269
+\lst@currlwidth=\dimen159
+\lst@column=\count270
+\lst@pos=\count271
+\lst@lostspace=\dimen160
+\lst@width=\dimen161
+\lst@newlines=\count272
+\lst@lineno=\count273
+\lst@maxwidth=\dimen162
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count274
+\lst@skipnumbers=\count275
+\lst@framebox=\box52
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
+))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count276
+\c@@ppsavesec=\count277
+\c@@ppsaveapp=\count278
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count279
+\l__pdf_internal_box=\box53
+)
+(./report.aux)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
+* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=433.62pt
+* \textheight=578.15999pt
+* \oddsidemargin=9.67395pt
+* \evensidemargin=9.67395pt
+* \topmargin=-2.51526pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count280
+\scratchdimen=\dimen163
+\scratchbox=\box54
+\nofMPsegments=\count281
+\nofMParguments=\count282
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count283
+\MPscratchDim=\dimen164
+\MPnumerator=\count284
+\makeMPintoPDFobject=\count285
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count286
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 37.
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--41
+
+ []
+
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
+<./img/neumann.png, id=14, 623.32875pt x 432.61626pt>
+File: ./img/neumann.png Graphic file (type png)
+<use ./img/neumann.png>
+Package pdftex.def Info: ./img/neumann.png  used on input line 44.
+(pdftex.def)             Requested size: 433.62pt x 300.95457pt.
+<./img/access_time.png, id=16, 505.89pt x 283.0575pt>
+File: ./img/access_time.png Graphic file (type png)
+<use ./img/access_time.png>
+Package pdftex.def Info: ./img/access_time.png  used on input line 51.
+(pdftex.def)             Requested size: 227.62204pt x 127.36172pt.
+<./img/stack_frame.png, id=17, 853.1875pt x 447.6725pt>
+File: ./img/stack_frame.png Graphic file (type png)
+<use ./img/stack_frame.png>
+Package pdftex.def Info: ./img/stack_frame.png  used on input line 60.
+(pdftex.def)             Requested size: 227.62204pt x 119.43185pt.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 42--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--70
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./img/neumann.png>] [4 <./img/access_time.png> <./img/stack_frame.png>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 71.
+<./img/split.png, id=26, 452.69125pt x 302.12875pt>
+File: ./img/split.png Graphic file (type png)
+<use ./img/split.png>
+Package pdftex.def Info: ./img/split.png  used on input line 83.
+(pdftex.def)             Requested size: 284.52756pt x 189.89493pt.
+<./img/coalesce.png, id=27, 452.69125pt x 302.12875pt>
+File: ./img/coalesce.png Graphic file (type png)
+<use ./img/coalesce.png>
+Package pdftex.def Info: ./img/coalesce.png  used on input line 92.
+(pdftex.def)             Requested size: 284.52756pt x 189.89493pt.
+<./img/external_fragmentation.png, id=28, 452.69125pt x 302.12875pt>
+File: ./img/external_fragmentation.png Graphic file (type png)
+<use ./img/external_fragmentation.png>
+Package pdftex.def Info: ./img/external_fragmentation.png  used on input line 1
+01.
+(pdftex.def)             Requested size: 284.52756pt x 189.89493pt.
+<./img/internal_fragmentation.png, id=29, 452.69125pt x 302.12875pt>
+File: ./img/internal_fragmentation.png Graphic file (type png)
+<use ./img/internal_fragmentation.png>
+Package pdftex.def Info: ./img/internal_fragmentation.png  used on input line 1
+10.
+(pdftex.def)             Requested size: 284.52756pt x 189.89493pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--133
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./img/split.png>] [6 <./img/coalesce.png> <./img/external_fragmentation.png
+>] [7 <./img/internal_fragmentation.png>]
+<./img/list_allocator.png, id=46, 403.5075pt x 201.75375pt>
+File: ./img/list_allocator.png Graphic file (type png)
+<use ./img/list_allocator.png>
+Package pdftex.def Info: ./img/list_allocator.png  used on input line 139.
+(pdftex.def)             Requested size: 284.52756pt x 142.26411pt.
+<./img/buddy_allocator.png, id=47, 604.2575pt x 352.31625pt>
+File: ./img/buddy_allocator.png Graphic file (type png)
+<use ./img/buddy_allocator.png>
+Package pdftex.def Info: ./img/buddy_allocator.png  used on input line 148.
+(pdftex.def)             Requested size: 284.52756pt x 165.89508pt.
+<./img/splay_tree.png, id=48, 368.37625pt x 154.5775pt>
+File: ./img/splay_tree.png Graphic file (type png)
+<use ./img/splay_tree.png>
+Package pdftex.def Info: ./img/splay_tree.png  used on input line 158.
+(pdftex.def)             Requested size: 256.0748pt x 107.45345pt.
+<./img/Cartesian_tree.png, id=49, 1204.5pt x 1154.3125pt>
+File: ./img/Cartesian_tree.png Graphic file (type png)
+<use ./img/Cartesian_tree.png>
+Package pdftex.def Info: ./img/Cartesian_tree.png  used on input line 167.
+(pdftex.def)             Requested size: 256.0748pt x 245.40704pt.
+<./img/arena_allocator.png, id=50, 682.55pt x 286.06876pt>
+File: ./img/arena_allocator.png Graphic file (type png)
+<use ./img/arena_allocator.png>
+Package pdftex.def Info: ./img/arena_allocator.png  used on input line 177.
+(pdftex.def)             Requested size: 256.0748pt x 107.3279pt.
+<./img/bitmap_allocator.png, id=51, 667.49374pt x 293.095pt>
+File: ./img/bitmap_allocator.png Graphic file (type png)
+<use ./img/bitmap_allocator.png>
+Package pdftex.def Info: ./img/bitmap_allocator.png  used on input line 188.
+(pdftex.def)             Requested size: 284.52756pt x 124.93715pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--211
+
+ []
+
+[8 <./img/list_allocator.png>] [9 <./img/buddy_allocator.png> <./img/splay_tree
+.png>] [10 <./img/Cartesian_tree.png> <./img/arena_allocator.png>] [11 <./img/b
+itmap_allocator.png>] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
+
+ []
+
+[13{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.en
+c}] [14] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 334--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--337
+
+ []
+
+[15] [16]
+<./img/results_vanilla_alloc.png, id=91, 462.528pt x 346.896pt>
+File: ./img/results_vanilla_alloc.png Graphic file (type png)
+<use ./img/results_vanilla_alloc.png>
+Package pdftex.def Info: ./img/results_vanilla_alloc.png  used on input line 37
+4.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/results_tlsf_alloc.png, id=92, 462.528pt x 346.896pt>
+File: ./img/results_tlsf_alloc.png Graphic file (type png)
+<use ./img/results_tlsf_alloc.png>
+Package pdftex.def Info: ./img/results_tlsf_alloc.png  used on input line 380.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/results_first_alloc.png, id=93, 462.528pt x 346.896pt>
+File: ./img/results_first_alloc.png Graphic file (type png)
+<use ./img/results_first_alloc.png>
+Package pdftex.def Info: ./img/results_first_alloc.png  used on input line 386.
+
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/results_vanilla_free.png, id=94, 462.528pt x 346.896pt>
+File: ./img/results_vanilla_free.png Graphic file (type png)
+<use ./img/results_vanilla_free.png>
+Package pdftex.def Info: ./img/results_vanilla_free.png  used on input line 392
+.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/results_tlsf_free.png, id=95, 462.528pt x 346.896pt>
+File: ./img/results_tlsf_free.png Graphic file (type png)
+<use ./img/results_tlsf_free.png>
+Package pdftex.def Info: ./img/results_tlsf_free.png  used on input line 398.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/results_first_free.png, id=96, 462.528pt x 346.896pt>
+File: ./img/results_first_free.png Graphic file (type png)
+<use ./img/results_first_free.png>
+Package pdftex.def Info: ./img/results_first_free.png  used on input line 404.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/boxplots_allocate.png, id=97, 462.528pt x 346.896pt>
+File: ./img/boxplots_allocate.png Graphic file (type png)
+<use ./img/boxplots_allocate.png>
+Package pdftex.def Info: ./img/boxplots_allocate.png  used on input line 413.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+<./img/boxplots_free.png, id=98, 462.528pt x 346.896pt>
+File: ./img/boxplots_free.png Graphic file (type png)
+<use ./img/boxplots_free.png>
+Package pdftex.def Info: ./img/boxplots_free.png  used on input line 419.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--425
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./img/size_distribution.png, id=99, 462.528pt x 346.896pt>
+File: ./img/size_distribution.png Graphic file (type png)
+<use ./img/size_distribution.png>
+Package pdftex.def Info: ./img/size_distribution.png  used on input line 433.
+(pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--446
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17 <./img/results_vanilla_alloc.png>]
+<./img/raytrace.png, id=104, 633.36626pt x 472.76625pt>
+File: ./img/raytrace.png Graphic file (type png)
+<use ./img/raytrace.png>
+Package pdftex.def Info: ./img/raytrace.png  used on input line 453.
+(pdftex.def)             Requested size: 284.52756pt x 212.38216pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--459
+
+ []
+
+[18 <./img/results_tlsf_alloc.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./report.bbl [19 <./img/results_first_alloc.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+[]\OT1/cmr/m/n/10 Bharat Ku-mar Makhija.  Learn how to el-e-vate your sys-tem's
+ per-for-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+\OT1/cmr/m/n/10 mance with multi-level caching.  $\OT1/cmtt/m/n/10 https : / / 
+medium . com / @bharatmakhija /
+ []
+
+
+Overfull \hbox (30.9596pt too wide) in paragraph at lines 65--72
+\OT1/cmtt/m/n/10 learn-[]how-[]to-[]elevate-[]your-[]systems-[]performance-[]wi
+th-[]multi-[]level-[]caching-[]511efb774a6e$\OT1/cmr/m/n/10 ,
+ []
+
+[20 <./img/results_vanilla_free.png>]) [21 <./img/results_tlsf_free.png>]
+[22 <./img/results_first_free.png>] [23 <./img/boxplots_allocate.png>] [24 <./i
+mg/boxplots_free.png>] [25 <./img/size_distribution.png>] [26 <./img/raytrace.p
+ng>] [27] [28] (./report.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 6715 strings out of 474116
+ 109400 string characters out of 5743683
+ 2152187 words of memory out of 5000000
+ 29031 multiletter control sequences out of 15000+600000
+ 562726 words of font info for 52 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,7n,65p,1060b,1677s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texli
+ve/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on report.pdf (28 pages, 1542147 bytes).
+PDF statistics:
+ 211 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+
