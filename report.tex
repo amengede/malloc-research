@@ -17,6 +17,8 @@
 	tabsize=4,
 	basicstyle=\ttfamily,
 }
+\usepackage{setspace}
+\doublespacing
 
 \begin{document}
 \title{Memory Allocation Algorithms}
@@ -40,13 +42,13 @@ Yes and no. Video games run on consoles which can have limited abilities compare
 \pagebreak
 \section{Terminology}
 All gaming systems currently use the Von Neumann architecture.\\
-\begin{figure}[h]
+\begin{figure}[htbp]
 \includegraphics[width=\textwidth]{neumann}
 \caption{Von Neumann Architecture}
 \end{figure}
 \\
 That is, they take input, process it and produce output. Input can come either directly from the user through peripheral devices, or from data stored in the system's main memory. The system can also store and retrieve data in memory. In order to speed up memory access, systems have a memory hierarchy called a cache. Data immediately being used by the system is stored in CPU registers. Beyond this, the CPU has L1, L2 and sometimes L3 cache, and further beyond this the system has its main memory (RAM), and even the hard drive. The memory stores of this hierarchy become progressively large, but also progressively slower to access.\\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=8cm]{access_time}
 	\caption{Approximate time to access various memory types \cite{accessTime}}
@@ -55,7 +57,7 @@ That is, they take input, process it and produce output. Input can come either d
 \\
 When a program is compiled and run it is allotted a certain amount of memory automatically, this is called its stack. A common use case for the stack is function calls. When a program calls a function, local variables inside the new function need to be stored somewhere. The program also needs to know, when the function ends, which location to return back to \cite{10.5555/202036}.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=8cm]{stack_frame}
 	\captionsetup{width=10cm}
@@ -78,16 +80,16 @@ which allocate and free memory respectively. Internally, many allocators also sh
 \\
 Upon a memory request, the allocator will attempt to find a free block which is able to satisfy the request. Some allocators deal with fixed sizes and others are flexible. It's common to split blocks so that the unused space can be used for future allocations.
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{split}
 	\captionsetup{width=10cm}
 	\caption{Splitting a block}
 \end{figure}
-\\
+\pagebreak
 Over the runtime of the program, memory which was previously allocated may be freed. In these cases, a custom allocator should have some mechanism to detect when neighbouring blocks can be merged together into one, larger free block. This merging process is called ``coalescing''.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{coalesce}
 	\captionsetup{width=10cm}
@@ -95,8 +97,8 @@ Over the runtime of the program, memory which was previously allocated may be fr
 \end{figure}
 \\
 The fundamental problem with dynamic memory allocation is it is dynamic. Over the lifetime of the program, an allocator's initial slab of memory may undergo many modifications. These modifications can make regions of memory unusable, this is known as fragmentation. Fragmentation comes in two forms, external fragmentation occurs when free blocks exist which cannot be coalesced together. Although the allocator has enough free memory, it may still fail to satisfy requests due to not having a large enough free block.\\
-\\
-\begin{figure}[h]
+\pagebreak
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{external_fragmentation}
 	\captionsetup{width=10cm}
@@ -105,7 +107,7 @@ The fundamental problem with dynamic memory allocation is it is dynamic. Over th
 \\
 Internal fragmentation describes the scenario where the allocator marks off a larger block than requested, does not split, and hence leaves some portion of a block unused. This may come about due to memory alignment/padding requirements, or the allocator's own mechanism. For instance fixed-size allocators exist which will not split blocks.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{internal_fragmentation}
 	\captionsetup{width=10cm}
@@ -134,7 +136,7 @@ This padding can then be added to the requested address to ensure it is correctl
 \section{Previous Work}
 Knuth's work \cite{knuth97} is considered the classic introduction to memory allocation algorithms. Here, the fundamental data structures, namely free list and buddy allocators, are discussed.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{list_allocator}
 	\captionsetup{width=10cm}
@@ -143,7 +145,7 @@ Knuth's work \cite{knuth97} is considered the classic introduction to memory all
 \\
 Free list allocators are based around the idea of linked lists, each node in the linked list describes a region of memory, for instance its size, padding and whether it is currently free or in use. Two free list algorithms are presented by Knuth: first fit and best fit. First fit traverses a linked list of free nodes to find the first one which is large enough to satisfy the request. Best fit searches the whole list to find the smallest such node. Both of these strategies are linear in their worst case execution time, which may not be desired for large systems.\\
 \pagebreak
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{buddy_allocator}
 	\captionsetup{width=10cm}
@@ -153,7 +155,7 @@ Free list allocators are based around the idea of linked lists, each node in the
 Knuth also discusses buddy systems, these are similar except that blocks are split in half until a suitable size is allocated. Buddy systems can be made faster than free lists by imposing a binary search tree structure, giving them logarithmic search time. Knuth also mentions the benefit of immediately freeing memory over garbage collection.\\
 \\
 In the following years some incremental progress has been made on these fundamental algorithms. Hosking, Moss and Jones \cite{10.5555/2025255} summarise some of these in the Garbage Collection Handbook. The concepts of size classes are discussed, along with the internal fragmentation problem of buddy allocators. Some more advanced data structures such as splay trees, Cartesian trees and bitmap fits are presented. The authors also briefly discuss considerations for multi threaded allocation, however such a topic is out of scope for this project. At any rate the authors conclude that most of the gains of multi threading can be realised by having well designed single thread allocators run independently.\\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=9cm]{splay_tree}
 	\captionsetup{width=10cm}
@@ -162,7 +164,7 @@ In the following years some incremental progress has been made on these fundamen
 \\
 Splay Trees, first proposed by Sleator and Tarjan \cite{10.1145/3828.3835}, are binary search trees where upon search, the result is promoted to the root of the tree. This has the benefit that frequently searched nodes are ``hot'' in memory and require less work to retrieve in future searches. 
 \pagebreak
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=9cm]{Cartesian_tree}
 	\captionsetup{width=10cm}
@@ -172,7 +174,7 @@ Splay Trees, first proposed by Sleator and Tarjan \cite{10.1145/3828.3835}, are 
 Cartesian trees, presented by Vuillemin \cite{10.1145/358841.358852}, are a two dimensional generalization of search trees. In a Cartesian tree, addresses are ordered from left to right and sizes are ordered from top to bottom. This has the advantage that the root node has the highest block size, and requests which are too large can be quickly rejected. A notable constraint of Cartesian trees is the inability to be re-balanced, and so the probablilty of highly unbalanced trees with linear search time can increase. This makes the worst case execution time difficult to predict.\\
 Stephenson proposes a memory allocator based on Cartesian Trees in \cite{10.1145/800217.806613}, named ``Fast Fits''. Stephenson found that Fast Fits performs somewhere between Free Lists with Buddy Allocators. Although neither Cartesian nor Splay trees were investigated in this report, they are novel approaches which could be examined in future work.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=9cm]{arena_allocator}
 	\captionsetup{width=10cm}
@@ -183,7 +185,7 @@ As mentioned previously, maximising the amount of useful data per cache line wil
 \\
 Matani and Menghali \cite{matani2021fastbitmapfitcpu} propose such an allocator which takes this concept even further. A fast bitmap fit allocator encodes a small binary search tree directly into the bits of an integer. The proposed allocator can quickly search, allocate and free as the whole structure is cache-local. The allocator can also take a "hint" to attempt adjacent allocations. In this system, all searches, allocations and frees can be done with bit level operations on a single unsigned integer, making the search structure very fast. As a trade-off, the allocator is more limited. A certain maximum number of allocations can be made (at least in the naive form), and allocations must all be fixed size. This approach is interesting for fixed size object pools, but may be limited in its use cases.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{bitmap_allocator}
 	\captionsetup{width=10cm}
@@ -369,58 +371,58 @@ plt.show()
 \end{lstlisting}
 \pagebreak
 To produce the following graphs:\\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{results_vanilla_alloc}
 	\captionsetup{width=10cm}
 	\caption{Standard C allocator}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{results_tlsf_alloc}
 	\captionsetup{width=10cm}
 	\caption{Two Level Segregated Fit allocator}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{results_first_alloc}
 	\captionsetup{width=10cm}
 	\caption{Free List allocator (first fit strategy)}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{results_vanilla_free}
 	\captionsetup{width=10cm}
 	\caption{Standard C allocator}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{results_tlsf_free}
 	\captionsetup{width=10cm}
 	\caption{Two Level Segregated Fit allocator}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{results_first_free}
 	\captionsetup{width=10cm}
 	\caption{Free List allocator (first fit strategy)}
 \end{figure}
-\\
+\pagebreak
 From these it seems that allocation and freeing have similar behaviour, Free Lists take an exceptional amount of time, and TLSF performs similarly to C's standard library, but with less variance. This can be further investigated with box and whisker plots.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{boxplots_allocate}
 	\captionsetup{width=10cm}
 	\caption{Memory Allocation times}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{boxplots_free}
 	\captionsetup{width=10cm}
 	\caption{Memory Free times}
 \end{figure}
-\\
+\pagebreak
 From these distributions we can see that TLSF is incredibly consistent for allocations, and otherwise more or less matches C's standard library allocator. As seen in the initial graphs, First fit is an extremely slow allocator for a real time system.
 
 \section{Strategies}
@@ -428,7 +430,7 @@ We could look at the results above and conclude something along the lines of: th
 \\
 As mentioned previously, the problem with dynamic memory allocation is that it is dynamic. Hence, the solution to dynamic memory allocation could be not to allocate memory dynamically. Consider the distribution of sizes for all the allocation requests in the Doom 3 memory journal.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{size_distribution}
 	\captionsetup{width=10cm}
@@ -448,7 +450,7 @@ Rethinking the way the program decomposes into subsystems, each subsystem can ma
 In this project I have presented the problem of dynamic memory allocation, along with the related concepts and terminology. I've discussed some of the work which has been undertaken in the field, and benchmarked some allocators in a practical scenario.  I've also presented a number of recommendations for strategies to try before reaching for a dynamic memory allocator. As many other studies have likewise concluded, there is no universal solution to all memory allocation problems. In fact, many more benefits can be realised by designing systems so as to rely less on dynamic allocation.
 As a final, motivating example, here is a simple Python Raytracer I made in order to stress test my CPU.\\
 \\
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=10cm]{raytrace}
 	\captionsetup{width=10cm}
@@ -459,7 +461,7 @@ Rendering one scene, with 2048 samples per ray, and every ray rebounding up to 2
 
 \bibliography{bibbed}{}
 \bibliographystyle{plain}
-
+\pagebreak
 \begin{appendices}
 	\section[A]{Source Code for Journal Replay}
 	\begin{lstlisting}[language=C++]
